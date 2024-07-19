@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-black: hsl(225, 20%, 20%);
+    --light-gray: hsl(223, 23%, 98%);
+    --primary-green: hsl(169, 70%, 44%);
+    --primary-red: hsl(9, 100%, 49%);
+    --primary-blue: hsl(218, 100%, 58%);
+    --disabled: hsl(0, 0%, 53%);
+    --scroller: hsl(221, 20%, 68%);
+
+    @font-face {
+      font-family: "CoFoSans-Regular";
+      src: url("../public/fonts/CoFoSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "CoFoSans-Medium";
+      src: url("../public/fonts/CoFoSans-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb,
+.custom-scrollbar:active::-webkit-scrollbar-thumb,
+.custom-scrollbar:focus::-webkit-scrollbar-thumb {
+  background-color: var(--scroller);
+}
+
+.highcharts-credits {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
